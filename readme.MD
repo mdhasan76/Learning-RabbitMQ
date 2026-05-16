@@ -1,12 +1,14 @@
 ## run by docker with rabbitmq ui dashboard
 
 ```
+# Better version with management UI + persistence
 docker run -d \
- --name rabbitmq \
- -p 5672:5672 \
- -p 15672:15672 \
- -v rabbitmq_data:/var/lib/rabbitmq \
- rabbitmq:4-management
+  --name rabbitmq \
+  -p 5672:5672 \
+  -p 15672:15672 \
+  -v rabbitmq_data:/var/lib/rabbitmq \
+  --restart unless-stopped \
+  rabbitmq:4-management
 ```
 
 #### Simple Explanation:
